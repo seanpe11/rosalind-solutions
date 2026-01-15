@@ -2,23 +2,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+unsigned long long int rabitt_recurrence(int n, int k){
+  vector<unsigned long long int> arr(n);
+  arr[0] = 1;
+  arr[1] = 1;
+  for(int i = 2; i < n; i++){
+    arr[i] = (arr[i-1] + k * arr[i-2]);
+  }
+  return arr[n-1];
+}
+
 int main(){
-  long long int n, k;
+  int n, k;
   cin >> n >> k;
 
-  long long int ans;
-  long long int a, b, c;
-  a = 1;
-  b = 1;
-  c = k + a;
+  unsigned long long int ans;
 
-  for(int i=1;i<n;i++){
-    int temp = c;
-    c = a * k + b;
+  ans = rabitt_recurrence(n, k);
 
-    a = b;
-    b = temp;
-  }
-
-  cout << c;
+  cout << ans;
 }
