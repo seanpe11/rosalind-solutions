@@ -1,3 +1,4 @@
+// https://rosalind.info/problems/hamm/
 #include <iostream>
 #include <string>
 using namespace std;
